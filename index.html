@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bhupendra Singh</title>
+    <link rel="stylesheet" href="assests/css/index.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.11/typed.min.js"></script>
+</head>
+
+<body>
+
+    <!-- .mainsection -->
+    <main class="mainsection">
+        <header class="header">
+            <div class="container dflex jbetween itemscenter">
+                <a href="JavaScript:void(0)" class="logo">BhupendraSingh</a>
+                <div class="headerRight dflex itemscenter">
+                    <span class="Phno dflex jbetween itemscenter">
+                        <img src="assests/images/phno.png" alt="">
+                        +91-805-810-9330
+                    </span>
+                    <div class="menuicon" onclick="OpenNavBar()">
+                        <img src="assests/images/menu.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- fixed menus -->
+        <nav class="navmenu">
+            <span class="closeMenu" onclick="CloseNavBar()">❌</span>
+            <div class="menuitems">
+                <a class="links active" href="#">Home</a>
+                <a class="links" href="#about">About Me</a>
+                <a class="links" href="#about">What I Do</a>
+                <a class="links" href="#about">Resume</a>
+                <div class="socLinks">
+                    <a href=""></a>
+                </div>
+            </div>
+        </nav>
+
+        <div class="container mainContent dflex jbetween itemscenter">
+            <div class="leftcontent">
+                <div class="lighttext">Hi, I'm Frontend Developer</div>
+                <h1 class="typedtext dflex"></h1>
+                <p>based in Noida, INDIA.</p>
+                <a href="#" class="appbtn">Contact me</a>
+            </div>
+            <figure class="mypric">
+                <img src="assests/images/mypic.png" alt="">
+            </figure>
+        </div>
+    </main>
+    <!-- end .mainsection -->
+    <section class="aboutsection">
+        <div class="container aboutcontainer">
+            <div class="appheadingbox">
+                <span class="smallheading">About me</span>
+                <div class="heading"> Know Me More</div>
+            </div>
+            <div class="flexdiv dflex jbetween" style="align-items: flex-start;"> 
+                <div class="leftdiv">
+                    <div class="heading">Hi, I'm <b>Bhupendra Singh</b> </div>
+                    <p>I'm a designer & developer with a passion for web design. I enjoy developing simple, clean and slick websites that provide real value to the end user.</p>
+                    <p>With a year of experience in the ever-evolving digital landscape, I've honed my ability to stay updated on the latest design trends, technological advancements, and industry best practices. This continuous learning process fuels my creativity and ensures that the websites I craft not only meet but exceed contemporary standards.</p>
+                </div>
+                <div class="expdiv">2+</div>
+            </div>
+            <div class="bottomflex dflex jbetween">
+                <div class="col">
+                    <span>Name:</span>
+                    <div class="boldtest">Bhupendra Singh</div>
+                </div>
+                <div class="col">
+                    <span>Email:</span>
+                    <div class="boldtest">
+                        <a href="mailto:yuvibana03@gmail.com">yuvibana03@gmail.com</a>
+                    </div>
+                </div>
+                <div class="col">
+                    <span>Date of birth:</span>
+                    <div class="boldtest">07 July 2000</div>
+                </div>
+                <div class="col">
+                    <span>From:</span>
+                    <div class="boldtest">Rajasthan, India</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script>
+        let navmenu = document.getElementsByClassName("navmenu")[0];
+        function OpenNavBar() {
+            navmenu.classList.add('active')
+        }
+        function CloseNavBar() {
+            navmenu.classList.remove('active')
+        }
+
+        // typing text
+        let typing = new Typed(".typedtext", {
+            strings: ["Bhupendra Singh", "JavaScript Developer", "Web Designer", "Web Developer"],
+            typeSpeed: 100,
+            backSpeed: 40,
+            loop: true,
+        });
+    </script>
+</body>
+
+</html>

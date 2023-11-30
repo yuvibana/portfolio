@@ -1,0 +1,68 @@
+@font-face {font-family: roboregular;src: url(../fonts/Roboto/Roboto-Regular.ttf);}
+@font-face {font-family: KdamThmorPro;src: url(../fonts/Kdam_Thmor_Pro/KdamThmorPro-Regular.ttf);}
+
+/* https://harnishdesign.net/demo/react/callum/demo/?theme=Full%20Screen%20Menu&intro=default */
+
+html{scroll-behavior: smooth;}
+:root {--color_1: #fff;--color_2: #212529;--color_3: #424649;--color_4: #f5df4e;}
+* {margin: 0;padding: 0;font-size: 16px;font-family: roboregular;}
+a {text-decoration: none;}
+
+.container {max-width: 90%; width: 100%; margin: 0 auto;padding: 15px 0;}
+.dflex{display: flex;}
+.jbetween{justify-content: space-between;}
+.itemscenter{align-items: center;}
+
+
+.mainsection {background: var(--color_4);height: 100vh;width: 100%;}
+.logo {font-family: KdamThmorPro;font-size: 30px;color: var(--color_2);}
+.headerRight{gap: 0 15px;}
+.header .Phno{font-size: 25px; gap: 0 10px; font-weight: 600;}
+.header .Phno img{width: 22px; rotate: 265deg;}
+.menuicon{cursor: pointer;}
+.closeMenu{font-size: 35px; color: var(--color_2); cursor: pointer; filter: brightness(5.5); position: absolute; right: 5%; top: 5%;}
+.navmenu{position: fixed; left: -100%;  top: 0; bottom: 0; height: 100%;width: 100%; background: #000; opacity: 0.9; transform: scale(0); transition: all 1s ease-in-out;}
+.navmenu.active{transform: scale(1); left: 0;}
+.menuitems{position: relative; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center;}
+.menuitems .links{display: block; font-size: 25px; color: var(--color_1); margin-bottom: 20px;}
+.menuitems .links.active, .menuitems .links:hover{color: var(--color_4);}
+
+.mainsection .mainContent{padding: 100px 0 0 0;}
+.mainsection .leftcontent{width: 50%;}
+/* .mainsection .mypric{width: 48%;} */
+.mainsection .mypric img{height: 500px;width: 500px;object-fit: contain;background: #252525;border-radius: 50%;border: 17px solid #fff;;}
+.typed-cursor{display: none;}
+.mainContent .lighttext, .mainContent .typedtext{font-size: 40px; text-transform: uppercase;}
+.mainContent .typedtext{font-weight: 600; height: 130px; line-height: 130px; font-size: 58px; color: var(--color_2); font-family: KdamThmorPro;}
+.mainContent p{margin-bottom: 20px; font-size: 20px;}
+.appbtn{padding: 8px 15px; border-radius: 8px; display: inline-block; background: var(--color_2); color: var(--color_1); text-transform: uppercase;}
+.mainContent .appbtn {padding: 15px 45px;}
+
+
+
+.appheadingbox{text-align: center; margin-bottom: 50px;}
+.appheadingbox .smallheading{background-color: var(--color_4); text-transform: capitalize; color: var(--color_2); font-size: 18px; padding: 2px 8px; margin-bottom: 10px; display: inline-block;}
+.appheadingbox .heading{font-size: 30px; font-weight: 600;}
+
+
+.aboutsection{padding: 80px 0;}
+.aboutsection .flexdiv .leftdiv{width: 70%;}
+.aboutsection .heading, .aboutsection .heading b{font-size: 35px; margin-bottom: 25px; padding-bottom: 8px;}
+.aboutsection .heading b{font-size: 35px; border-bottom: 3px solid var(--color_4); font-family: KdamThmorPro;}
+.aboutsection p{font-size: 18px; padding-bottom: 20px;  text-align: justify;}
+.aboutsection .flexdiv .expdiv{position: relative; font-size: 120px; color: var(--color_3);}
+.aboutsection .flexdiv .expdiv::before{content: ''; position: absolute; background-color: var(--color_4); height: 90px;width: 90px; border-radius: 100%; left: 50%;top: 50%;transform: translate(-50%, -50%); z-index: -1;}
+.aboutsection .bottomflex{margin-top: 35px;}
+.aboutsection .bottomflex span{color: var(--color_3); display: block;font-weight: 600; font-size: 16px;padding-bottom: 5px;margin-bottom: 5px;} 
+.aboutsection .bottomflex .boldtest, .aboutsection .bottomflex .boldtest a{font-size: 20px; color: var(--color_2); font-weight: 600;}
+/* .aboutsection .bottomflex .boldtest a{font-size: 20px; color: var(--color_2);} */
+
+
+
+/* @media (max-width:1540px) {
+/* @media (max-width:1540px) {
+    .mainsection{height: 738px;}
+}
+@media (max-width:1480px) {
+    .mainsection{height: 738px;}
+} */
