@@ -14,6 +14,8 @@ a {text-decoration: none;}
 .itemscenter{align-items: center;}
 
 
+.header.headerfixed{background: var(--color_1); position: fixed; left: 0; right: 0; z-index: 9; border-bottom: 1px solid rgb(222, 222, 222);}
+
 .mainsection {background: var(--color_4);height: 100vh;width: 100%;}
 .logo {font-family: KdamThmorPro;font-size: 30px;color: var(--color_2);}
 .headerRight{gap: 0 15px;}
@@ -21,7 +23,7 @@ a {text-decoration: none;}
 .header .Phno img{width: 22px; rotate: 265deg;}
 .menuicon{cursor: pointer;}
 .closeMenu{font-size: 35px; color: var(--color_2); cursor: pointer; filter: brightness(5.5); position: absolute; right: 5%; top: 5%;}
-.navmenu{position: fixed; left: -100%;  top: 0; bottom: 0; height: 100%;width: 100%; background: #000; opacity: 0.9; transform: scale(0); transition: all 1s ease-in-out;}
+.navmenu{position: fixed; left: -100%;  top: 0; bottom: 0; height: 100%;width: 100%; background: #000; opacity: 0.9; transform: scale(0); transition: all 1s ease-in-out; z-index: 9;}
 .navmenu.active{transform: scale(1); left: 0;}
 .menuitems{position: relative; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center;}
 .menuitems .links{display: block; font-size: 25px; color: var(--color_1); margin-bottom: 20px;}
@@ -59,6 +61,31 @@ a {text-decoration: none;}
 
 
 
+.resumesection{padding: 100px 0; background: rgba(248,249,250);}
+.resumesection .flexdetail{gap: 0 40px; margin-top: 120px;}
+.resumesection .colleft, .resumesection .colright{flex: 0 0 auto; width: 43%;}
+.resumesection .flexdetail .innerbox{border-left: 2px solid var(--color_4);}
+.resumesection .flexdetail .heading{font-size: 30px; color: var(--color_2); margin-bottom: 20px;}
+.resumesection .flexdetail .contentdiv{ border-bottom: 1px solid rgb(222, 222, 222); padding: 20px 0; margin-left: 15px;}
+.resumesection .flexdetail .subheading{font-size: 25px; text-transform: uppercase; font-weight: 600; font-family: KdamThmorPro;}
+.resumesection .flexdetail .contentdiv p{font-size: 18px; padding: 15px 0;}
+.resumesection .flexdetail .contentdiv em{font-size: 25px; color: var(--color_2); }
+
+
+.resumesection .skillsdiv{margin-top: 100px;}
+.resumesection .leftdiv, .resumesection .rightdiv{width: 43%;}
+.resumesection .skillsdiv .flexskill{padding: 15px 0; margin: 15px 0; position: relative;}
+.resumesection .skillsdiv .flexskill p{font-size: 18px; color: #000;}
+.resumesection .skillsdiv .flexskill::after, .resumesection .skillsdiv .flexskill::before{content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 9px; border-radius: 10px; background: rgb(186, 186, 186);}
+.resumesection .skillsdiv .flexskill::after{background: var(--color_4); border-radius: 0;}
+.resumesection .skillsdiv .flexskill.fend::after, .resumesection .skillsdiv .flexskill.jscript::after{width: 75%;}
+.resumesection .skillsdiv .flexskill.rJs::after{width: 70%;}
+.resumesection .skillsdiv .flexskill.htCss::after, .resumesection .skillsdiv .flexskill.bTwind::after{ width: 80%;}
+
+.pfoliofooter{background: var(--color_2); color: var(--color_1); padding: 30px 0;}
+.pfoliofooter p, .pfoliofooter a{font-size: 18px;}
+.pfoliofooter a{color: var(--color_4); text-decoration: underline;}
+
 /* @media (max-width:1540px) {
 /* @media (max-width:1540px) {
     .mainsection{height: 738px;}
@@ -66,3 +93,27 @@ a {text-decoration: none;}
 @media (max-width:1480px) {
     .mainsection{height: 738px;}
 } */
+
+@media (max-width:768px) {
+    header.headerfixed{top: -59px;}
+    .mainContent .lighttext, .mainContent .typedtext{font-size: 19px;}
+    .logo{width: fit-content; margin: 0 auto; padding-bottom: 15px;}
+    .mainsection{height: auto; padding: 0 0 25px 0;}
+    .mainsection .mainContent {padding: 44px 0 0 0;}
+    .header .container, .aboutsection .flexdiv, .mainsection .mainContent, .aboutsection .bottomflex, .resumesection .flexdetail, .resumesection .skillsflex, .pfoliofooter .container{flex-wrap: wrap;}
+    .mainsection .leftcontent, .aboutsection .flexdiv .leftdiv, .resumesection .colleft, .resumesection .colright, .resumesection .leftdiv, .resumesection .rightdiv{width: 100%;}       
+    .mainsection .mypric img{height: auto; width: auto; border-radius: 0; border-width: 6px; margin-top: 25px;}
+    .aboutsection .heading, .aboutsection .heading b{font-size: 25px;}
+    .resumesection .colright{margin-top: 15px;}
+    .resumesection .skillsdiv{margin-top: 25px;}
+    .aboutsection .bottomflex .col{width: 100%; padding: 8px 0; margin-bottom: 8px; border-bottom: 1px solid rgb(222, 222, 222);}
+    .mainContent .typedtext{height: 98px; line-height: 98px;}
+    .aboutsection {padding: 23px 0;}
+    .resumesection{padding: 0;}
+    .appheadingbox .heading, .resumesection .flexdetail .subheading{font-size: 20px;}
+    .resumesection .flexdetail{margin-top: 40px;}
+    
+    
+    .pfoliofooter .container{gap: 15px 0;}
+    .pfoliofooter .container p, .pfoliofooter .container a{font-size: 14px;}
+} 

@@ -31,10 +31,10 @@
         <nav class="navmenu">
             <span class="closeMenu" onclick="CloseNavBar()">❌</span>
             <div class="menuitems">
-                <a class="links active" href="#">Home</a>
-                <a class="links" href="#about">About Me</a>
-                <a class="links" href="#about">What I Do</a>
-                <a class="links" href="#about">Resume</a>
+                <a onclick="CloseNavBar()" class="links active" href="#">Home</a>
+                <a onclick="CloseNavBar()" class="links" href="#aboutme">About Me</a>
+                <!-- <a onclick="CloseNavBar()" class="links" href="#about">What I Do</a> -->
+                <a onclick="CloseNavBar()" class="links" href="#resume">Resume</a>
                 <div class="socLinks">
                     <a href=""></a>
                 </div>
@@ -49,22 +49,28 @@
                 <a href="#" class="appbtn">Contact me</a>
             </div>
             <figure class="mypric">
-                <img src="assests/images/mypic.png" alt="">
+                <img src="assests/images/mypic.png" alt=""
+                    style="filter: brightness(1.5) hue-rotate(35deg) contrast(1.5);">
             </figure>
         </div>
     </main>
     <!-- end .mainsection -->
-    <section class="aboutsection">
+    <!-- aboutsection -->
+    <section class="aboutsection" id="aboutme">
         <div class="container aboutcontainer">
             <div class="appheadingbox">
                 <span class="smallheading">About me</span>
                 <div class="heading"> Know Me More</div>
             </div>
-            <div class="flexdiv dflex jbetween" style="align-items: flex-start;"> 
+            <div class="flexdiv dflex jbetween" style="align-items: flex-start;">
                 <div class="leftdiv">
                     <div class="heading">Hi, I'm <b>Bhupendra Singh</b> </div>
-                    <p>I'm a designer & developer with a passion for web design. I enjoy developing simple, clean and slick websites that provide real value to the end user.</p>
-                    <p>With a year of experience in the ever-evolving digital landscape, I've honed my ability to stay updated on the latest design trends, technological advancements, and industry best practices. This continuous learning process fuels my creativity and ensures that the websites I craft not only meet but exceed contemporary standards.</p>
+                    <p>I'm a designer & developer with a passion for web design. I enjoy developing simple, clean and
+                        slick websites that provide real value to the end user.</p>
+                    <p>With a year of experience in the ever-evolving digital landscape, I've honed my ability to stay
+                        updated on the latest design trends, technological advancements, and industry best practices.
+                        This continuous learning process fuels my creativity and ensures that the websites I craft not
+                        only meet but exceed contemporary standards.</p>
                 </div>
                 <div class="expdiv">2+</div>
             </div>
@@ -90,7 +96,110 @@
             </div>
         </div>
     </section>
+
+    <!-- resumesection -->
+    <section class="resumesection" id="resume">
+        <div class="container aboutcontainer">
+            <div class="appheadingbox">
+                <span class="smallheading">Resume</span>
+                <div class="heading"> A summary of My Resume</div>
+            </div>
+            <div class="flexdetail dflex jbetween">
+                <div class="col colleft">
+                    <h2 class="heading">My Education</h2>
+                    <div class="innerbox">
+                        <div class="contentdiv" style="padding-top: 8px;">
+                            <div class="subheading">10th (MATRICULATIONTE)</div>
+                            <p>RBSE (Board of Secondary Education, Rajasthan)</p>
+                            <em>2014-2015</em>
+                        </div>
+                    </div>
+                    <div class="innerbox">
+                        <div class="contentdiv">
+                            <div class="subheading">12th (INTERMEDIATE)</div>
+                            <p>RBSE (Board of Secondary Education, Rajasthan)</p>
+                            <em>2016-2017</em>
+                        </div>
+                    </div>
+                    <div class="innerbox">
+                        <div class="contentdiv" style="border-bottom: 0; padding-bottom: 8px;">
+                            <div class="subheading">BCA (Bachelors's in Computer Application) </div>
+                            <p>RRBMU (Raj Rishi Bhartrihari Matsya University, Rajasthan)</p>
+                            <em>2017-2020</em>
+                        </div>
+                    </div>
+                </div>
+                <div class="col colright">
+                    <h2 class="heading">My Experience</h2>
+                    <div class="innerbox">
+                        <div class="contentdiv">
+                            <div class="subheading">Frontend Developer</div>
+                            <p>GTF Technologies</p>
+                            <em>Oct 2023 - Present</em>
+                        </div>
+                    </div>
+                    <div class="innerbox">
+                        <div class="contentdiv" style="border-bottom: 0; padding-bottom: 8px;">
+                            <div class="subheading">Frontend Developer</div>
+                            <p>TeamXML Technologies (Jaipur, Rajasthan)</p>
+                            <em>Jun 2022 / Oct 2023</em>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="skillsdiv">
+                <div class="skillsflex dflex jbetween">
+                    <div class="leftdiv">
+                        <div class="flexskill dflex jbetween fend">
+                            <p>Frontend</p>
+                            <p>75%</p>
+                        </div>
+                        <div class="flexskill dflex jbetween jscript">
+                            <p>JavaScript</p>
+                            <p>75%</p>
+                        </div>
+                        <div class="flexskill dflex jbetween rJs">
+                            <p>React.Js</p>
+                            <p>70%</p>
+                        </div>
+                    </div>
+                    <div class="rightdiv">
+                        <div class="flexskill dflex jbetween htCss">
+                            <p>HTML / CSS</p>
+                            <p>80%</p>
+                        </div>
+                        <div class="flexskill dflex jbetween bTwind">
+                            <p>Bootstrap / Tailwind</p>
+                            <p>80%</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="pfoliofooter">
+        <div class="container dflex jbetween itemscenter">
+            <p>Copyright © 2023 Bhupendra. All Rights Reserved.</p>
+            <p>Designed By <a href="https://www.instagram.com/bp.singh07/" target="_blank">Bhupendra Singh</a></p>
+        </div>
+    </footer>
     <script>
+
+        let headerfixed = "headerfixed";
+        document.addEventListener("DOMContentLoaded", function () {
+            let header = document.getElementsByClassName("header")[0];
+            window.onscroll = function () {
+                // Check if the user has scrolled down, you can customize this condition
+                if (window.scrollY > 100) {
+                    header.classList.add("headerfixed");
+                } else {
+                    header.classList.remove("headerfixed");
+                }
+            };
+
+        })
+
         let navmenu = document.getElementsByClassName("navmenu")[0];
         function OpenNavBar() {
             navmenu.classList.add('active')
