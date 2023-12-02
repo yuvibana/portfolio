@@ -96,6 +96,7 @@ a {text-decoration: none;}
 
 @media (max-width:768px) {
     header.headerfixed{top: -59px;}
+    .header .container{justify-content: center;}
     .mainContent .lighttext, .mainContent .typedtext{font-size: 19px;}
     .logo{width: fit-content; margin: 0 auto; padding-bottom: 15px;}
     .mainsection{height: auto; padding: 0 0 25px 0;}
