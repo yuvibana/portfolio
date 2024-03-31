@@ -100,7 +100,8 @@ a {text-decoration: none;}
 .resumesection .skillsdiv .flexskill::after{background: var(--color_4); border-radius: 0;}
 .resumesection .skillsdiv .flexskill.fend::after, .resumesection .skillsdiv .flexskill.jscript::after{width: 75%;}
 .resumesection .skillsdiv .flexskill.rJs::after{width: 70%;}
-.resumesection .skillsdiv .flexskill.htCss::after, .resumesection .skillsdiv .flexskill.bTwind::after{ width: 80%;}
+.resumesection .skillsdiv .flexskill.bTwind::after{width 80%;}
+.resumesection .skillsdiv .flexskill.htCss::after, .resumesection .skillsdiv .flexskill.bTwind::after{ width: 85%;}
 
 .pfoliofooter{background: var(--color_2); color: var(--color_1); padding: 30px 0;}
 .pfoliofooter p, .pfoliofooter a{font-size: 18px;}
