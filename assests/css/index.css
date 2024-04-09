@@ -28,7 +28,7 @@ a {text-decoration: none;}
 .configure-core {width: 100%;height: 100%;background-color: #1d2630;}
 
 
-.container {max-width: 1180px;width: 100%;margin: 0 auto;padding: 0 15px;}
+.container {max-width: 1180px;width: 91%;margin: 0 auto;padding: 0 15px;}
 .dflex{display: flex;}
 .jbetween{justify-content: space-between;}
 .itemscenter{align-items: center;}
