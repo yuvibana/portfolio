@@ -33,15 +33,17 @@ a {text-decoration: none;}
 .jbetween{justify-content: space-between;}
 .itemscenter{align-items: center;}
 
+body{background: #080807;}
+.header{padding: 10px 0;}
+.header.headerfixed{position: fixed; left: 0; right: 0; z-index: 9; border-bottom: 1px solid rgb(222, 222, 222);background: #080807;}
 
-.header.headerfixed{background: var(--color_1); position: fixed; left: 0; right: 0; z-index: 9; border-bottom: 1px solid rgb(222, 222, 222);}
-
-.mainsection {background: var(--color_4);height: 100vh;width: 100%;}
-.logo {font-family: KdamThmorPro;font-size: 30px;color: var(--color_2);}
+.mainsection {background: url(../images/banner.jpg); background-size: cover; height: 100vh;width: 100%;}
+.logo {font-family: KdamThmorPro;font-size: 30px;color: #fff;}
 .headerRight{gap: 0 15px;}
-.header .Phno{font-size: 25px; gap: 0 10px; font-weight: 600;}
-.header .Phno img{width: 22px; rotate: 265deg;}
+.header .Phno{font-size: 25px; gap: 0 10px; font-weight: 600;color: #fff;}
+.header .Phno img{width: 22px; rotate: 265deg;filter: invert(1);}
 .menuicon{cursor: pointer;}
+.menuicon img{filter: invert(1);}
 .closeMenu{font-size: 35px; color: var(--color_2); cursor: pointer; filter: brightness(5.5); position: absolute; right: 5%; top: 5%;}
 .navmenu{position: fixed; left: -100%;  top: 0; bottom: 0; height: 100%;width: 100%; background: #000; opacity: 0.9; transform: scale(0); transition: all 1s ease-in-out; z-index: 9;}
 .navmenu.active{transform: scale(1); left: 0;}
@@ -49,15 +51,15 @@ a {text-decoration: none;}
 .menuitems .links{display: block; font-size: 25px; color: var(--color_1); margin-bottom: 20px;}
 .menuitems .links.active, .menuitems .links:hover{color: var(--color_4);}
 
-.mainsection .mainContent{padding: 100px 15px 0 15px;}
+.mainsection .mainContent{transform: translateY(80%);}
 .mainsection .leftcontent{width: 50%;}
 /* .mainsection .mypric{width: 48%;} */
 .mainsection .mypric img{height: 500px;width: 500px;object-fit: contain;background: #252525;border-radius: 50%;border: 17px solid #fff;;}
 .typed-cursor{display: none;}
-.mainContent .lighttext, .mainContent .typedtext{font-size: 40px; text-transform: uppercase;}
-.mainContent .typedtext{font-weight: 600;height: 130px;line-height: 130px;font-size: 42px;color: var(--color_2);font-family: KdamThmorPro;}
-.mainContent p{margin-bottom: 20px; font-size: 20px;}
-.appbtn{padding: 8px 15px; border-radius: 8px; display: inline-block; background: var(--color_2); color: var(--color_1); text-transform: uppercase;}
+.mainContent .lighttext, .mainContent .typedtext{font-size: 40px; text-transform: uppercase;color: #fff;}
+.mainContent .typedtext{font-weight: 600;height: 130px;line-height: 130px;font-size: 42px;color: #fff;font-family: KdamThmorPro;}
+.mainContent p{margin-bottom: 20px; font-size: 20px;color: #fff;}
+.appbtn{padding: 8px 15px; border-radius: 8px; display: inline-block;  color: var(--color_1); text-transform: uppercase;border: 1px solid #fff;}
 .mainContent .appbtn {padding: 15px 45px;}
 
 
@@ -67,40 +69,40 @@ a {text-decoration: none;}
 .appheadingbox .heading{font-size: 30px; font-weight: 600;}
 
 
-.aboutsection{padding: 80px 0;}
+.aboutsection{padding: 80px 0;color: #fff;}
 .aboutsection .flexdiv .leftdiv{width: 70%;}
 .aboutsection .heading, .aboutsection .heading b{font-size: 35px; margin-bottom: 25px; padding-bottom: 8px;}
 .aboutsection .heading b{font-size: 35px; border-bottom: 3px solid var(--color_4); font-family: KdamThmorPro;}
-.aboutsection p{font-size: 18px; padding-bottom: 20px;  text-align: justify;}
-.aboutsection .flexdiv .expdiv{position: relative; font-size: 120px; color: var(--color_3);}
+.aboutsection p{font-size: 18px; padding-bottom: 20px;  text-align: justify;line-height: 28px;}
+.aboutsection .flexdiv .expdiv{position: relative; font-size: 120px; color: #fff;}
 .aboutsection .flexdiv .expdiv::before{content: ''; position: absolute; background-color: var(--color_4); height: 90px;width: 90px; border-radius: 100%; left: 50%;top: 50%;transform: translate(-50%, -50%); z-index: -1;}
 .aboutsection .bottomflex{margin-top: 35px;}
-.aboutsection .bottomflex span{color: var(--color_3); display: block;font-weight: 600; font-size: 16px;padding-bottom: 5px;margin-bottom: 5px;} 
-.aboutsection .bottomflex .boldtest, .aboutsection .bottomflex .boldtest a{font-size: 20px; color: var(--color_2); font-weight: 600;}
+.aboutsection .bottomflex span{color: var(--color_4); display: block;font-weight: 600; font-size: 16px;padding-bottom: 5px;margin-bottom: 5px;} 
+.aboutsection .bottomflex .boldtest, .aboutsection .bottomflex .boldtest a{font-size: 20px; color: #fff; font-weight: 600;}
 /* .aboutsection .bottomflex .boldtest a{font-size: 20px; color: var(--color_2);} */
 
 
 
-.resumesection{padding: 100px 0; background: rgba(248,249,250);}
+.resumesection{padding: 100px 0; color: #fff;}
 .resumesection .flexdetail{gap: 0 40px; margin-top: 120px;}
 .resumesection .colleft, .resumesection .colright{flex: 0 0 auto; width: 43%;}
 .resumesection .flexdetail .innerbox{border-left: 2px solid var(--color_4);}
-.resumesection .flexdetail .heading{font-size: 30px; color: var(--color_2); margin-bottom: 20px;}
-.resumesection .flexdetail .contentdiv{ border-bottom: 1px solid rgb(222, 222, 222); padding: 20px 0; margin-left: 15px;}
+.resumesection .flexdetail .heading{font-size: 30px; color: var(--color_4); margin-bottom: 20px;}
+.resumesection .flexdetail .contentdiv{ border-bottom: 1px solid var(--color_4); padding: 20px 0; margin-left: 15px;}
 .resumesection .flexdetail .subheading{font-size: 25px; text-transform: uppercase; font-weight: 600; font-family: KdamThmorPro;}
 .resumesection .flexdetail .contentdiv p{font-size: 18px; padding: 15px 0;}
-.resumesection .flexdetail .contentdiv em{font-size: 25px; color: var(--color_2); }
+.resumesection .flexdetail .contentdiv em{font-size: 25px; color: var(--color_4); }
 
 
 .resumesection .skillsdiv{margin-top: 100px;}
 .resumesection .leftdiv, .resumesection .rightdiv{width: 43%;}
 .resumesection .skillsdiv .flexskill{padding: 15px 0; margin: 15px 0; position: relative;}
-.resumesection .skillsdiv .flexskill p{font-size: 18px; color: #000;}
-.resumesection .skillsdiv .flexskill::after, .resumesection .skillsdiv .flexskill::before{content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 9px; border-radius: 10px; background: rgb(186, 186, 186);}
+.resumesection .skillsdiv .flexskill p{font-size: 18px; color: #fff;}
+.resumesection .skillsdiv .flexskill::after, .resumesection .skillsdiv .flexskill::before{content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 9px; border-radius: 10px; background: #fff;}
 .resumesection .skillsdiv .flexskill::after{background: var(--color_4); border-radius: 0;}
 .resumesection .skillsdiv .flexskill.fend::after, .resumesection .skillsdiv .flexskill.jscript::after{width: 75%;}
 .resumesection .skillsdiv .flexskill.rJs::after{width: 70%;}
-.resumesection .skillsdiv .flexskill.bTwind::after{width 80%;width: 80%;}
+.resumesection .skillsdiv .flexskill.bTwind::after{width: 80%;}
 .resumesection .skillsdiv .flexskill.htCss::after{width: 85%;}
 
 .pfoliofooter{background: var(--color_2); color: var(--color_1); padding: 30px 0;}
@@ -108,9 +110,10 @@ a {text-decoration: none;}
 .pfoliofooter a{color: var(--color_4); text-decoration: underline;}
 
 .socicons{position: fixed;right: 0;top: 40%;}
-.socicons .links{transition: background-color 0.4s ease-in-out; background: var(--color_2); display: block; border-bottom: 1px solid var(--color_1);}
+.socicons .links{transition: background-color 0.4s ease-in-out; background: var(--color_4); display: block; border-bottom: 2px solid var(--color_2);}
+.socicons .links:last-child {border: 0;}
 .socicons .links:hover{ background: var(--color_1);}
-.socicons .links svg{fill: var(--color_1);padding: 8px;}
+.socicons .links svg{fill: var(--color_2);padding: 8px;}
 .socicons .links svg:hover{fill: var(--color_2);}
 
 @media (max-width:768px) {
@@ -118,19 +121,19 @@ a {text-decoration: none;}
     .header .container{justify-content: center;}
     .mainContent .lighttext, .mainContent .typedtext{font-size: 19px;}
     .logo{width: fit-content; margin: 0 auto; padding-bottom: 15px;}
-    .mainsection{height: auto; padding: 0 0 25px 0;}
+    .mainsection{height: auto;padding: 0 0 25px 0;background-position: center;height: 56vh;}
     .mainsection .mainContent {
-    padding-top: 44px;
     justify-content: center;
+    transform: translateY(33%);
 }
     .header .container, .aboutsection .flexdiv, .mainsection .mainContent, .aboutsection .bottomflex, .resumesection .flexdetail, .resumesection .skillsflex, .pfoliofooter .container{flex-wrap: wrap;}
-    .mainsection .leftcontent, .aboutsection .flexdiv .leftdiv, .resumesection .colleft, .resumesection .colright, .resumesection .leftdiv, .resumesection .rightdiv{width: 100%;}       
+    .mainsection .leftcontent, .aboutsection .flexdiv .leftdiv, .resumesection .colleft, .resumesection .colright, .resumesection .leftdiv, .resumesection .rightdiv{width: 100%;margin: 0 auto;}       
     .mainsection .mypric img{height: auto; width: auto; border-radius: 0; border-width: 6px; margin-top: 25px;}
     .aboutsection .heading, .aboutsection .heading b{font-size: 25px;}
     .resumesection .colright{margin-top: 15px;}
     .resumesection .skillsdiv{margin-top: 25px;}
     .aboutsection .bottomflex .col{width: 100%; padding: 8px 0; margin-bottom: 8px; border-bottom: 1px solid rgb(222, 222, 222);}
-    .mainContent .typedtext{height: 98px;line-height: 98px;}
+    .mainContent .typedtext{height: 49px;line-height: 50px;}
     .aboutsection {padding: 23px 0;}
     .resumesection{padding: 0;}
     .appheadingbox .heading, .resumesection .flexdetail .subheading{font-size: 20px;}
