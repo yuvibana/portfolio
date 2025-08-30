@@ -203,7 +203,7 @@
 
         /* Sections */
         .section {
-            padding-block: 64px;
+            padding-block: 34px;
             border-bottom: 1px solid var(--muted);
         }
 
@@ -223,7 +223,7 @@
 
         /* Hero */
         .hero {
-            padding-top: 72px;
+            padding-top: 22px;
         }
 
         .grid-hero {
@@ -467,51 +467,25 @@
             }
         }
 
-        /* Responsive */
-        @media (max-width: 720px) {
-            .grid-hero {
-                grid-template-columns: 1.2fr 0.8fr;
-                align-items: center;
-            }
-
-            .skills-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .projects {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .timeline {
-                grid-template-columns: 1fr 1fr;
-            }
-
-            .contact-grid {
-                grid-template-columns: repeat(4, 1fr);
-            }
+        .nav-toggle {
+            display: inline-flex;
         }
 
-        @media (min-width: 960px) {
-            .nav-toggle {
-                display: inline-flex;
-            }
+        .site-nav {
+            position: absolute;
+            inset: 64px 0 auto 0;
+            display: none;
+            background: var(--bg);
+            border-bottom: 1px solid var(--muted);
+        }
 
-            .site-nav {
-                position: absolute;
-                inset: 64px 0 auto 0;
-                display: none;
-                background: var(--bg);
-                border-bottom: 1px solid var(--muted);
-            }
+        .site-nav.open {
+            display: block;
+        }
 
-            .site-nav.open {
-                display: block;
-            }
-
-            .site-nav ul {
-                flex-direction: column;
-                padding: 0.75rem;
-            }
+        .site-nav ul {
+            flex-direction: column;
+            padding: 0.75rem;
         }
 
         /* Utility */
