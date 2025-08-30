@@ -1,135 +1,753 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Bhupendra Singh — Tablet Dark</title>
+    <meta name="description" content="Tablet-optimized dark portfolio of Bhupendra Singh. Modern, fast, and accessible. Mobile-first up to tablet width." />
+    <meta name="theme-color" content="#0b1220" />
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bhupendra Singh</title>
-    <link href="https://fonts.googleapis.com/css?family=Poppins:700" rel="stylesheet">
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+<style>
+/* Base theme variables and reset for minimal, professional UI.
+   Color palette (exactly 4 colors used):
+   --color-primary: #2563eb (brand blue)
+   --bg: #f8fafc (background neutral)
+   --text: #0f172a (primary text)
+   --muted: #e5e7eb (borders/surfaces) */
 
+:root {
+  --color-primary: #2563eb;
+  --bg: #f8fafc;
+  --text: #0f172a;
+  --muted: #e5e7eb;
 
-    <style>
-        body {
-            font-family: 'Poppins', sans-serif;
-            background: #00091B;
-            color: #fff;
-        }
+  --radius: 12px;
+  --container: 1100px;
 
+  --shadow-sm: 0 1px 2px rgba(15, 23, 42, 0.06);
+  --shadow-md: 0 4px 16px rgba(15, 23, 42, 0.08);
+}
 
-        @keyframes fadeIn {
-            from {
-                top: 20%;
-                opacity: 0;
-            }
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0f172a; /* reuse same 4 colors, inverted roles */
+    --text: #f8fafc;
+    --muted: #1f2937;
+    /* --color-primary remains the same */
+  }
+}
 
-            to {
-                top: 100;
-                opacity: 1;
-            }
+/* Reset and base */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
 
-        }
+html {
+  scroll-behavior: smooth;
+}
 
-        @-webkit-keyframes fadeIn {
-            from {
-                top: 20%;
-                opacity: 0;
-            }
+body {
+  margin: 0;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial,
+    "Apple Color Emoji", "Segoe UI Emoji";
+  color: var(--text);
+  background: var(--bg);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
 
-            to {
-                top: 100;
-                opacity: 1;
-            }
+img,
+svg {
+  display: block;
+}
 
-        }
+a {
+  color: inherit;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
 
-        .wrapper {
-            position: absolute;
-            left: 50%;
-            top: 50%;
-            transform: translate(-50%, -50%);
-            -webkit-transform: translate(-50%, -50%);
-            animation: fadeIn 1000ms ease;
-            -webkit-animation: fadeIn 1000ms ease;
+.container {
+  width: 100%;
+  max-width: var(--container);
+  margin-inline: auto;
+  padding-inline: 1rem;
+}
 
-        }
+/* Accessibility */
+.skip-link {
+  position: absolute;
+  left: -999px;
+  top: 0;
+  background: var(--color-primary);
+  color: #fff;
+  padding: 0.5rem 0.75rem;
+  border-radius: 6px;
+}
+.skip-link:focus {
+  left: 1rem;
+  top: 1rem;
+  outline: none;
+}
 
-        h1 {
-            font-size: 50px;
-            margin-bottom: 0;
-            line-height: 1;
-            font-weight: 700;
-        }
+/* Header */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: color-mix(in oklab, var(--bg) 92%, transparent);
+  backdrop-filter: saturate(1.2) blur(8px);
+  border-bottom: 1px solid var(--muted);
+}
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 64px;
+  gap: 1rem;
+}
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+}
+.brand-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--color-primary);
+  box-shadow: 0 0 0 4px color-mix(in oklab, var(--color-primary) 20%, transparent);
+}
+.brand-name {
+  white-space: nowrap;
+}
 
-        .dot {
-            color: #4FEBFE;
-        }
+.site-nav ul {
+  display: flex;
+  gap: 1rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.site-nav a {
+  display: inline-block;
+  padding: 0.5rem 0.4rem;
+  border-radius: 8px;
+}
+.site-nav a:hover {
+  background: color-mix(in oklab, var(--muted) 40%, transparent);
+  text-decoration: none;
+}
 
-        p {
-            text-align: center;
-            margin: 18px;
-            font-family: 'Muli', sans-serif;
-            font-weight: normal;
+.nav-toggle {
+  display: none;
+  background: transparent;
+  border: 0;
+  padding: 0.25rem;
+  cursor: pointer;
+  color: var(--text);
+}
+.nav-toggle-bar {
+  width: 24px;
+  height: 2px;
+  background: currentColor;
+  margin: 5px 0;
+  border-radius: 1px;
+}
 
-        }
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.65rem 0.95rem;
+  border-radius: 10px;
+  border: 1px solid var(--muted);
+  box-shadow: var(--shadow-sm);
+  transition: transform .15s ease, box-shadow .2s ease, background-color .2s ease;
+  font-weight: 600;
+}
+.btn:hover {
+  transform: translateY(-1px);
+  text-decoration: none;
+  box-shadow: var(--shadow-md);
+}
+.btn-primary {
+  color: #fff;
+  background: var(--color-primary);
+  border-color: color-mix(in oklab, var(--color-primary) 60%, var(--muted));
+}
+.btn-ghost {
+  background: transparent;
+}
 
-        .icons {
-            text-align: center;
+/* Sections */
+.section {
+  padding-block: 64px;
+  border-bottom: 1px solid var(--muted);
+}
+.section:last-of-type {
+  border-bottom: 0;
+}
 
-        }
+.section-title {
+  font-size: clamp(1.25rem, 1rem + 1.5vw, 1.75rem);
+  margin: 0 0 1rem 0;
+  line-height: 1.3;
+}
+.body {
+  margin: 0.25rem 0 0 0;
+}
 
-        .icons i {
-            color: #00091B;
-            background: #fff;
-            height: 15px;
-            width: 15px;
-            padding: 13px;
-            margin: 0 10px;
-            border-radius: 50px;
-            border: 2px solid #fff;
-            transition: all 200ms ease;
-            text-decoration: none;
-            position: relative;
-        }
+/* Hero */
+.hero {
+  padding-top: 72px;
+}
+.grid-hero {
+  display: grid;
+  gap: 1.5rem;
+}
+.hero-copy .eyebrow {
+  color: color-mix(in oklab, var(--text) 60%, var(--bg));
+  font-weight: 600;
+  letter-spacing: 0.2px;
+}
+.title {
+  font-size: clamp(1.5rem, 1.1rem + 2.2vw, 2.5rem);
+  margin: 0.25rem 0 0.75rem 0;
+  line-height: 1.2;
+}
+.lead {
+  color: color-mix(in oklab, var(--text) 80%, var(--bg));
+  max-width: 60ch;
+}
+.actions {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+.social {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 0.75rem;
+}
+.social-link {
+  color: color-mix(in oklab, var(--text) 80%, var(--bg));
+  padding: 0.4rem;
+  border-radius: 8px;
+  border: 1px solid transparent;
+}
+.social-link:hover {
+  border-color: var(--muted);
+  color: var(--color-primary);
+}
 
-        .icons i:hover,
-        .icons i:active {
-            color: #fff;
-            background: none;
-            cursor: pointer !important;
-            transform: scale(1.2);
-            -webkit-transform: scale(1.2);
-            text-decoration: none;
+.hero-card {
+  border: 1px solid var(--muted);
+  border-radius: var(--radius);
+  padding: 1rem;
+  box-shadow: var(--shadow-sm);
+}
+.hero-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.75rem;
+}
+.stat-number {
+  font-weight: 700;
+}
+.stat-label {
+  color: color-mix(in oklab, var(--text) 70%, var(--bg));
+  font-size: 0.9rem;
+}
 
-        }
-    </style>
-</head>
+/* Skills */
+.skills-grid {
+  display: grid;
+  gap: 1rem;
+}
+.skill-card {
+  border: 1px solid var(--muted);
+  border-radius: var(--radius);
+  padding: 1rem;
+  background: color-mix(in oklab, var(--bg) 96%, white);
+}
+.skill-card h3 {
+  margin: 0 0 0.75rem 0;
+  font-size: 1.05rem;
+}
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.tags li {
+  border: 1px solid var(--muted);
+  padding: 0.3rem 0.5rem;
+  border-radius: 999px;
+  font-size: 0.9rem;
+}
 
-<body>
+/* Projects */
+.projects {
+  display: grid;
+  gap: 1rem;
+}
+.project {
+  border: 1px solid var(--muted);
+  border-radius: var(--radius);
+  padding: 1rem;
+}
+.project h3 {
+  margin: 0 0 0.6rem 0;
+}
+.project ul {
+  margin: 0;
+  padding-left: 1.1rem;
+}
 
-    <div class="wrapper">
-        <div style="text-align: center;">
-            <h1>Portfolio is under construction<span class="dot">...</span></h1>
-            <p>I'm Bhupendra Singh – currently brewing code and coffee ☕.</p>
-            <!-- <p>Portfolio is under construction... probably by a cat walking on my keyboard 🐱⌨️.</p> -->
-            <div class="icons">
-                <a class="icons__btn" href="https://www.linkedin.com/in/bhupendra-singh-rajput-890316295/"
-                    target="_blank"><i class="fa fab fa-linkedin"></i></a>
-                <a class="icons__btn" href="https://x.com/bpsingh_07" target="_blank"><i
-                        class="fa fa-brands fa-twitter"></i></a>
-                <a class="icons__btn" href="https://www.instagram.com/bp.singh07/" target="_blank"><i
-                        class="fa fab fa-instagram"></i></a>
+/* Timeline */
+.timeline {
+  display: grid;
+  gap: 1rem;
+}
+.timeline-item {
+  border: 1px solid var(--muted);
+  border-radius: var(--radius);
+  padding: 1rem;
+}
+.timeline-header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  margin-bottom: 0.25rem;
+}
+.meta {
+  color: color-mix(in oklab, var(--text) 70%, var(--bg));
+  font-size: 0.95rem;
+}
 
-                <div style="margin-top: 30px;">
-                    <a href="assets/images/bhupendra-cv.docx" download
-                        style="text-decoration: none; font-weight: 400; letter-spacing: 1px; color: #fff; border: 1px solid #fff; padding: 8px 15px; border-radius: 50px;">Download-CV</a>
-                </div>
+/* Education */
+.edu-list {
+  margin: 0;
+  padding-left: 1.1rem;
+}
 
+/* Services */
+.services {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.services li {
+  border: 1px dashed var(--muted);
+  padding: 0.6rem 0.8rem;
+  border-radius: 10px;
+}
+
+/* Contact */
+.contact-grid {
+  display: grid;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+.contact-item h3 {
+  margin: 0 0 0.25rem 0;
+  font-size: 1rem;
+}
+.contact-social {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 0.75rem;
+}
+.cta-row {
+  margin-top: 1rem;
+}
+
+/* Footer */
+.site-footer {
+  border-top: 1px solid var(--muted);
+  padding: 20px 0;
+}
+.footer-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+.to-top {
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+/* Reveal animations (subtle) */
+.reveal {
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity .5s ease, transform .5s ease;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+  .btn,
+  .site-nav a {
+    transition: none !important;
+  }
+}
+
+/* Responsive */
+@media (min-width: 720px) {
+  .grid-hero {
+    grid-template-columns: 1.2fr 0.8fr;
+    align-items: center;
+  }
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .projects {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .timeline {
+    grid-template-columns: 1fr 1fr;
+  }
+  .contact-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 960px) {
+  .nav-toggle {
+    display: inline-flex;
+  }
+  .site-nav {
+    position: absolute;
+    inset: 64px 0 auto 0;
+    display: none;
+    background: var(--bg);
+    border-bottom: 1px solid var(--muted);
+  }
+  .site-nav.open {
+    display: block;
+  }
+  .site-nav ul {
+    flex-direction: column;
+    padding: 0.75rem;
+  }
+}
+
+/* Utility */
+.text-balance {
+  text-wrap: balance;
+}
+.text-pretty {
+  text-wrap: pretty;
+}
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+</style>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header">
+      <div class="container header-inner">
+        <a href="./tablet.html" class="brand" aria-label="Bhupendra Singh Home">
+          <span class="brand-dot" aria-hidden="true"></span>
+          <span class="brand-name">Bhupendra Singh</span>
+        </a>
+
+        <button
+          class="nav-toggle"
+          aria-controls="site-nav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+          id="nav-toggle"
+        >
+          <span class="nav-toggle-bar" aria-hidden="true"></span>
+          <span class="nav-toggle-bar" aria-hidden="true"></span>
+          <span class="nav-toggle-bar" aria-hidden="true"></span>
+        </button>
+
+        <nav id="site-nav" class="site-nav" aria-label="Primary">
+          <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a class="btn btn-primary" href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+       Hero 
+      <section class="section hero">
+        <div class="container grid-hero">
+          <div class="hero-copy reveal">
+            <p class="eyebrow">Frontend Developer</p>
+            <h1 class="title text-balance">
+              Modern dark UI for tablet. Built mobile‑first with care.
+            </h1>
+            <p class="lead text-pretty">
+              I design and develop fast, accessible interfaces with React, JavaScript, HTML, CSS, and Tailwind.
+              This version is focused on mobile and tablet screens only.
+            </p>
+            <div class="actions">
+              <a class="btn btn-primary" href="#projects">View Projects</a>
+              <a class="btn btn-ghost" href="mailto:yuvibana03@gmail.com">Email Me</a>
             </div>
+          </div>
+
+          <div class="hero-card reveal" aria-hidden="true">
+            <div class="hero-stats">
+              <div>
+                <div class="stat-number">3+</div>
+                <div class="stat-label">Years</div>
+              </div>
+              <div>
+                <div class="stat-number">React</div>
+                <div class="stat-label">Specialist</div>
+              </div>
+              <div>
+                <div class="stat-number">A11y</div>
+                <div class="stat-label">Best Practices</div>
+              </div>
+            </div>
+          </div>
         </div>
-    </div>
+      </section>
 
+       About 
+      <section id="about" class="section reveal">
+        <div class="container">
+          <h2 class="section-title">About</h2>
+          <p class="body">
+            Frontend Developer crafting responsive, user‑centric web apps. I integrate APIs, optimize performance,
+            and collaborate across teams to ship reliable, maintainable UI.
+          </p>
+        </div>
+      </section>
 
-</body>
+       Skills 
+      <section id="skills" class="section reveal">
+        <div class="container">
+          <h2 class="section-title">Skills</h2>
+          <div class="skills-grid">
+            <div class="skill-card">
+              <h3>Core</h3>
+              <ul class="tags">
+                <li>HTML</li><li>CSS</li><li>JavaScript</li>
+              </ul>
+            </div>
+            <div class="skill-card">
+              <h3>Frameworks</h3>
+              <ul class="tags">
+                <li>React</li><li>Redux</li><li>Tailwind</li>
+              </ul>
+            </div>
+            <div class="skill-card">
+              <h3>Tooling</h3>
+              <ul class="tags">
+                <li>Vite</li><li>Git</li><li>DevTools</li>
+              </ul>
+            </div>
+            <div class="skill-card">
+              <h3>Performance</h3>
+              <ul class="tags">
+                <li>Lazy Load</li><li>Memoization</li><li>Code Split</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
 
+       Projects 
+      <section id="projects" class="section reveal">
+        <div class="container">
+          <h2 class="section-title">Projects</h2>
+          <div class="projects">
+            <article class="project">
+              <h3>Cloud Drive Web App</h3>
+              <ul>
+                <li>JWT auth, role-based access, nested folders, breadcrumbs.</li>
+                <li>Responsive React UI, lazy loading, code splitting.</li>
+              </ul>
+            </article>
+            <article class="project">
+              <h3>Dynamic CMS</h3>
+              <ul>
+                <li>API-driven content, CRM tools for non-technical updates.</li>
+                <li>Reusable routes and scalable frontend modules.</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+       Experience 
+      <section id="experience" class="section reveal">
+        <div class="container">
+          <h2 class="section-title">Experience</h2>
+          <div class="timeline">
+            <div class="timeline-item">
+              <div class="timeline-header">
+                <h3>GTF Technologies — Frontend Developer</h3>
+                <span class="meta">Feb 2022 – Present • Noida</span>
+              </div>
+              <p class="body">Built and shipped performant, accessible UIs with modern tooling.</p>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-header">
+                <h3>TeamXml — Frontend Developer</h3>
+                <span class="meta">Jan 2021 – Jan 2022 • Delhi</span>
+              </div>
+              <p class="body">Maintained production interfaces with a strong focus on UX.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+       Contact 
+      <section id="contact" class="section reveal">
+        <div class="container contact">
+          <h2 class="section-title">Get in touch</h2>
+          <div class="contact-grid">
+            <div class="contact-item">
+              <h3>Email</h3>
+              <a href="mailto:yuvibana03@gmail.com">yuvibana03@gmail.com</a>
+            </div>
+            <div class="contact-item">
+              <h3>Phone</h3>
+              <a href="tel:+918058109330">+91‑8058109330</a>
+            </div>
+            <div class="contact-item">
+              <h3>Social</h3>
+              <ul class="contact-social">
+                <li><a href="https://www.linkedin.com/in/bhupendra-singh-rajput-890316295/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+                <li><a href="https://github.com/yuvibana" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="cta-row">
+            <a class="btn btn-primary" href="mailto:yuvibana03@gmail.com">Let’s Work Together</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <p>© <span id="year"></span> Bhupendra Singh. All rights reserved.</p>
+        <a class="to-top" href="#main" aria-label="Back to top">Back to top ↑</a>
+      </div>
+    </footer>
+
+     Reuse existing JS for nav + reveal 
+    <script>
+    
+    /**
+ * Tablet page interactions: mobile nav, smooth scroll, reveal-on-scroll.
+ * Keeps to vanilla JS for a pure HTML/CSS/JS stack.
+ */
+;(() => {
+  const navToggle = document.getElementById("nav-toggle")
+  const siteNav = document.getElementById("site-nav")
+  const yearEl = document.getElementById("year")
+
+  // Footer year
+  if (yearEl) {
+    yearEl.textContent = String(new Date().getFullYear())
+  }
+
+  // Mobile nav toggle
+  if (navToggle && siteNav) {
+    navToggle.addEventListener("click", () => {
+      const isOpen = siteNav.classList.toggle("open")
+      navToggle.setAttribute("aria-expanded", isOpen ? "true" : "false")
+    })
+    // Close menu when clicking a link
+    siteNav.querySelectorAll('a[href^="#"]').forEach((link) => {
+      link.addEventListener("click", () => {
+        siteNav.classList.remove("open")
+        navToggle.setAttribute("aria-expanded", "false")
+      })
+    })
+  }
+
+  // Smooth scroll for in-page anchors
+  document.querySelectorAll('a[href^="#"]').forEach((a) => {
+    a.addEventListener("click", (e) => {
+      const href = a.getAttribute("href") || ""
+      const id = href.slice(1)
+      const target = id ? document.getElementById(id) : null
+      if (target) {
+        e.preventDefault()
+        target.scrollIntoView({ behavior: "smooth", block: "start" })
+      }
+    })
+  })
+
+  // Reveal-on-scroll: CSS expects .reveal.visible
+  const reveals = document.querySelectorAll(".reveal")
+  if ("IntersectionObserver" in window && reveals.length) {
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible")
+            io.unobserve(entry.target)
+          }
+        })
+      },
+      { threshold: 0.15 },
+    )
+    reveals.forEach((el) => io.observe(el))
+  } else {
+    // Fallback for older browsers / reduced motion
+    reveals.forEach((el) => el.classList.add("visible"))
+  }
+})()
+
+    </script>
+  </body>
 </html>
